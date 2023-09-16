@@ -1,21 +1,27 @@
 import 'dart:io';
-void main() {
-  // Read the image width (IW)
-  stdout.write("Enter the image width (IW): ");
-  int imageWidth = int.parse(stdin.readLineSync()!);
 
-  // Ensure that IW is within the specified constraints
-  if (imageWidth < 400 || imageWidth > 1600 || imageWidth % 10 != 0) {
-    print("Invalid image width. Please provide a width within the constraints.");
-    return;
+void main() {
+  // Read input values
+  stdout.write("Enter l1, r1, l2, and r2 separated by spaces: ");
+  List<int> input = stdin.readLineSync()!.split(' ').map((e) => int.parse(e)).toList();
+
+  // Extract values
+  int l1 = input[0];
+  int r1 = input[1];
+  int l2 = input[2];
+  int r2 = input[3];
+
+  // Calculate the gap
+  int gapStart = r2 + 1;
+  int gapEnd = l2 - 1;
+
+  // Print the two segments
+  for (int i = l1; i <= gapEnd; i++) {
+    stdout.write("$i ");
+  }
+  for (int i = gapStart; i <= r1; i++) {
+    stdout.write("$i ");
   }
 
-  // Fixed container width
-  int containerWidth = 1000;
-
-  // Calculate the left margin
-  int leftMargin = (containerWidth >= imageWidth) ? (containerWidth - imageWidth) ~/ 2 : 0;
-
-  // Print the left margin
-  print("Left margin for the image within the container: $leftMargin pixels");
+  print(""); // Print a newline to separate the segments
 }
