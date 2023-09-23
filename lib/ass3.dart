@@ -1,24 +1,26 @@
 import 'dart:io';
 void main() {
-  Map<int, int> productPrices = {
-    101: 10,
-    202: 25,
-    303: 5,
+  Map<int, String> fruitNames = {
+    31231: "Banana",
+    43861: "Elderberry",
+    82678: "Honeydew Melon",
+    23456: "Apple",
+    78901: "Mango",
+    98765: "Nectarine",
+    45678: "Orange",
+    67890: "Raspberry",
+    21098: "Tangerine",
   };
 
-  List<int> input = stdin.readLineSync()!.split(' ').map((e) => int.parse(e)).toList();
+  // Read the fruit ID from the user
+  print("Enter a fruit ID: ");
+  int fruitId = int.parse(stdin.readLineSync()!);
 
-  int? productId = input[0];
-  int? quantity = input[1];
-
-  if (productId != null && quantity != null) {
-
-    if (productPrices.containsKey(productId)) {
-      int price = productPrices[productId]!;
-      int totalCost = price * quantity;
-      print("$totalCost");
-    }
+  // Check if the fruit ID is valid
+  if (fruitNames.containsKey(fruitId)) {
+    String fruitName = fruitNames[fruitId]!;
+    print("Name: $fruitName");
   } else {
-    print("Invalid product ID. Please enter a valid product ID.");
+    print("Invalid fruit ID. Please enter a valid fruit ID.");
   }
 }
