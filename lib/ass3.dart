@@ -1,17 +1,24 @@
 import 'dart:io';
-
 void main() {
-  // Read the screen width (W)
-  stdout.write("Enter the screen width (W): ");
-  int screenWidth = int.parse(stdin.readLineSync()!);
+  Map<int, int> productPrices = {
+    101: 10,
+    202: 25,
+    303: 5,
+  };
 
-  // Fixed table width (TW)
-  int tableWidth = 300;
+  List<int> input = stdin.readLineSync()!.split(' ').map((e) => int.parse(e)).toList();
 
-  // Calculate the horizontal position of the table
-  int tablePosition = (screenWidth - tableWidth) ~/ 2;
+  int? productId = input[0];
+  int? quantity = input[1];
 
-  // Print the table's horizontal position
-  print("Horizontal position of the table: $tablePosition pixels");
+  if (productId != null && quantity != null) {
+
+    if (productPrices.containsKey(productId)) {
+      int price = productPrices[productId]!;
+      int totalCost = price * quantity;
+      print("$totalCost");
+    }
+  } else {
+    print("Invalid product ID. Please enter a valid product ID.");
+  }
 }
-
