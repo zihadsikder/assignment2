@@ -687,7 +687,7 @@
 //   // Calculate the duration of the work shift
 //   int duration;
 //
-//   if (startTime <= endTime) {
+//   if (startTime < endTime) {
 //     duration = endTime - startTime;
 //   } else {
 //     // Handle the case where the work shift spans two days
@@ -698,24 +698,24 @@
 //   print("Duration of the work shift: $duration hours");
 // }
 ///Write a program that reads 10 strings, one string per line
-import 'dart:io';
-
-void main() {
-  // Initialize a counter to keep track of the number of strings containing 'T'
-  int count = 0;
-
-  // Read 10 strings, one string per line
-  for (int i = 0; i < 10; i++) {
-    stdout.write("Enter string ${i + 1}: ");
-    String input = stdin.readLineSync()!;
-
-    // Check if the string contains the character 'T'
-    if (input.contains('T')) {
-      count++;
-    }
-  }
-
-  // Print the count of strings containing 'T'
-  print("Number of strings containing 'T': $count");
-}
+// import 'dart:io';
+//
+// void main() {
+//   // Initialize a counter to keep track of the number of strings containing 'T'
+//   int count = 0;
+//
+//   // Read 10 strings, one string per line
+//   for (int i = 0; i < 10; i++) {
+//     stdout.write("Enter string ${i + 1}: ");
+//     String input = stdin.readLineSync()!;
+//
+//     // Check if the string contains the character 'T'
+//     if (input.contains('T')) {
+//       count++;
+//     }
+//   }
+//
+//   // Print the count of strings containing 'T'
+//   print("Number of strings containing 'T': $count");
+// }
 
