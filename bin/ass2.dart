@@ -634,3 +634,88 @@
 //     print("Invalid product ID. Please enter a valid product ID.");
 //   }
 // }
+///product name search
+//import 'dart:io';
+// void main() {
+//   Map<int, String> fruitNames = {
+//     31231: "Banana",
+//     43861: "Elderberry",
+//     82678: "Honeydew Melon",
+//     23456: "Apple",
+//     78901: "Mango",
+//     98765: "Nectarine",
+//     45678: "Orange",
+//     67890: "Raspberry",
+//     21098: "Tangerine",
+//   };
+//   int fruitId = int.parse(stdin.readLineSync()!);
+//
+//   if (fruitNames.containsKey(fruitId)) {
+//     String fruitName = fruitNames[fruitId]!;
+//     print("$fruitName");
+//   } else {
+//     print("Invalid fruit ID. Please enter a valid fruit ID.");
+//   }
+// }
+///calculating the duration of a work shift,
+// import 'dart:io';
+//
+// void main() {
+//   // Read the start and end times from the user as a single line
+//   stdout.write("Enter the start and end times (e.g., '10 10'): ");
+//   String input = stdin.readLineSync()!;
+//
+//   // Split the input into two parts (start time and end time)
+//   List<String> parts = input.split(' ');
+//
+//   // Check if there are exactly two parts
+//   if (parts.length != 2) {
+//     print("Invalid input. Please enter two space-separated integers.");
+//     return;
+//   }
+//
+//   // Parse the start and end times as integers
+//   int? startTime = int.tryParse(parts[0]);
+//   int? endTime = int.tryParse(parts[1]);
+//
+//   // Check if parsing was successful
+//   if (startTime == null || endTime == null) {
+//     print("Invalid input. Please enter valid integers for start and end times.");
+//     return;
+//   }
+//
+//   // Calculate the duration of the work shift
+//   int duration;
+//
+//   if (startTime <= endTime) {
+//     duration = endTime - startTime;
+//   } else {
+//     // Handle the case where the work shift spans two days
+//     duration = 24 - startTime + endTime;
+//   }
+//
+//   // Print the duration of the work shift
+//   print("Duration of the work shift: $duration hours");
+// }
+///Write a program that reads 10 strings, one string per line
+import 'dart:io';
+
+void main() {
+  // Initialize a counter to keep track of the number of strings containing 'T'
+  int count = 0;
+
+  // Read 10 strings, one string per line
+  for (int i = 0; i < 10; i++) {
+    stdout.write("Enter string ${i + 1}: ");
+    String input = stdin.readLineSync()!;
+
+    // Check if the string contains the character 'T'
+    if (input.contains('T')) {
+      count++;
+    }
+  }
+
+  // Print the count of strings containing 'T'
+  print("Number of strings containing 'T': $count");
+}
+
