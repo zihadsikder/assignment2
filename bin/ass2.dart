@@ -774,3 +774,34 @@
 //
 //   return result;
 // }
+///You are tasked with writing a program that takes a string S as input and transforms it in such a way that after every two characters, the following character is converted to uppercase.
+// import 'dart:io';
+//
+// void main() {
+//   String input = stdin.readLineSync()!;
+//
+//   String transformedString = transformString(input);
+//
+//   print(transformedString);
+// }
+//
+// String transformString(String input) {
+//   String result = '';
+//   bool makeUppercase = false;
+//
+//   for (int i = 0; i < input.length; i++) {
+//     String currentChar = input[i];
+//
+//     if (i % 3 == 2 && currentChar.contains(RegExp(r'[a-zA-Z]'))) {
+//       // If it's the third character and alphabetic, convert to uppercase.
+//       result += currentChar.toUpperCase();
+//       makeUppercase = false;
+//     } else {
+//       result += currentChar;
+//       if (currentChar.contains(RegExp(r'[a-zA-Z]'))) {
+//         makeUppercase = true;
+//       }
+//     }
+//   }
+//   return result;
+// }
