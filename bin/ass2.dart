@@ -718,4 +718,59 @@
 //   // Print the count of strings containing 'T'
 //   print("Number of strings containing 'T': $count");
 // }
+// import 'dart:io';
+//
+// void main() {
+//   String input = stdin.readLineSync()!;
+//
+//   List<String> parts = input.split(' ');
+//
+//   if (parts.length != 2) {
+//     print("Invalid input. Please enter two space-separated integers.");
+//     return;
+//   }
+//
+//   int? startTime = int.tryParse(parts[0]);
+//   int? endTime = int.tryParse(parts[1]);
+//
+//   if (startTime == null || endTime == null) {
+//     print("Invalid input. Please enter valid integers for start and end times.");
+//     return;
+//   }
+//
+//   int duration;
+//
+//   if (startTime < endTime) {
+//     duration = endTime - startTime;
+//   } else {
+//     duration = (24 - startTime) + endTime;
+//   }
+//
+//   print("$duration");
+// }
 
+///You are tasked with writing a program that takes a string S as input and transforms it in such a way that after every two characters, add charecter 'x' in the stringS. If 'x' is added immideately before last two character you need not to add the character 'x' at the end.
+// import 'dart:io';
+//
+// void main() {
+//   String input = stdin.readLineSync()!;
+//
+//   String transformedString = transformString(input);
+//
+//   print(transformedString);
+// }
+//
+// String transformString(String input) {
+//   String result = '';
+//   int length = input.length;
+//
+//   for (int i = 0; i < length; i++) {
+//     result += input[i];
+//
+//     if ((i + 1) % 2 == 0 && i != length - 1) {
+//       result += 'x';
+//     }
+//   }
+//
+//   return result;
+// }
