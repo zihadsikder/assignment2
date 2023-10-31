@@ -1,26 +1,36 @@
 import 'dart:io';
+
 void main() {
-  Map<int, String> fruitNames = {
-    31231: "Banana",
-    43861: "Elderberry",
-    82678: "Honeydew Melon",
-    23456: "Apple",
-    78901: "Mango",
-    98765: "Nectarine",
-    45678: "Orange",
-    67890: "Raspberry",
-    21098: "Tangerine",
-  };
+  String input = stdin.readLineSync()!;
+  List<String> parts = input.split(' ');
+  String number = parts[0];
+  int k = int.parse(parts[1]);
 
-  // Read the fruit ID from the user
-  print("Enter a fruit ID: ");
-  int fruitId = int.parse(stdin.readLineSync()!);
+  String minimizedNumber = minimizeNumber(number, k);
 
-  // Check if the fruit ID is valid
-  if (fruitNames.containsKey(fruitId)) {
-    String fruitName = fruitNames[fruitId]!;
-    print("Name: $fruitName");
-  } else {
-    print("Invalid fruit ID. Please enter a valid fruit ID.");
+  print("Min = $minimizedNumber");
+}
+
+String minimizeNumber(String number, int k) {
+  List<int> digits = number.split('').map(int.parse).toList();
+
+  if (digits.length == 0 || k <= 0) {
+    return number;
   }
+
+  if (digits[0] != 1) {
+    digits[0] = 1;
+    k--;
+  }
+
+  int i = 1;
+  while (k > 0 && i < digits.length) {
+    if (digits[i] != 0) {
+      digits[i] = 0;
+      k--;
+    }
+    i++;
+  }
+
+  return digits.join();
 }
