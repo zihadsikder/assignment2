@@ -874,3 +874,31 @@
 //   // Print the final price
 //   print("${finalPrice.toStringAsFixed(2)}");
 // }
+///Suppose, you work in a toy car workshop, and your job is to build toy cars from a collection of parts. Each toy car needs 4 wheels, 1 car body, and 2 figures of people to be placed inside. Write a program which will calculate how many complete toy cars can be made, given the total number of wheels, car bodies and figures available.
+// import 'dart:io';
+// import 'dart:math';
+// void main() {
+//   print("Enter numbers:");
+//
+//   String input = stdin.readLineSync()!;
+//   List<String> parts = input.split(' ');
+//
+//   if (parts.length != 3) {
+//     print("Invalid input. Please enter three integers separated by spaces.");
+//     return;
+//   }
+//
+//   int wheels = int.tryParse(parts[0]) ?? 0;
+//   int carBodies = int.tryParse(parts[1]) ?? 0;
+//   int figures = int.tryParse(parts[2]) ?? 0;
+//
+//   if (wheels < 4 || carBodies < 1 || figures < 2) {
+//     print("0");
+//   } else {
+//     int maxCars = 0;
+//     maxCars = wheels ~/ 4;
+//     maxCars = min(maxCars, carBodies);
+//     maxCars = min(maxCars, figures ~/ 2);
+//     print(maxCars);
+//   }
+//}
