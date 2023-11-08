@@ -902,3 +902,56 @@
 //     print(maxCars);
 //   }
 //}
+///You wants to buy a cake that is at least 200 grams, but you don’t want it to be heavier than 300 grams. As for sweetness, she wants her cake to have a sugar content of 50 grams or more. The cake must have 150 calories or more.
+// import 'dart:io';
+//
+// void main() {
+//   String input = stdin.readLineSync()!;
+//   List<String> parts = input.split(' ');
+//
+//   if (parts.length != 3) {
+//     print("Invalid input. Please enter three integers separated by spaces.");
+//     return;
+//   }
+//
+//   int weight = int.tryParse(parts[0]) ?? 0;
+//   int sugarContent = int.tryParse(parts[1]) ?? 0;
+//   int calories = int.tryParse(parts[2]) ?? 0;
+//
+//   if (weight >= 200 && weight <= 300 && sugarContent >= 50 && calories >= 150) {
+//     print("Yes");
+//   } else {
+//     print("No");
+//   }
+// }
+///There are N tiles in a row with red, green or blue paint. How many tiles do you need to remove so that no two consecutive tiles have the same color? Consecutive tiles are those that are next to each other.
+// import 'dart:io';
+//
+// void main() {
+//   int n = int.parse(stdin.readLineSync()!);
+//   String tiles = stdin.readLineSync()!;
+//
+//   int removals = 0;
+//   for (int i = 1; i < n; i++) {
+//     if (tiles[i] == tiles[i - 1]) {
+//       removals++;
+//     }
+//   }
+//
+//   print(removals);
+// }
+///There’re N minutes left for the class to end, and there are two remaining assignments for you to complete. Find out if you will manage to complete both assignments today.
+// import 'dart:io';
+//
+// void main() {
+//   List<int> inputs = stdin.readLineSync()!.split(' ').map(int.parse).toList();
+//   int N = inputs[0];
+//   int A = inputs[1];
+//   int B = inputs[2];
+//
+//   if (N >= (A + B)) {
+//     print("Yes");
+//   } else {
+//     print("No");
+//   }
+// }
