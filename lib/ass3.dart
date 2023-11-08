@@ -1,9 +1,6 @@
-
 import 'dart:io';
-import 'dart:math';
-void main() {
-  print("Enter numbers:");
 
+void main() {
   String input = stdin.readLineSync()!;
   List<String> parts = input.split(' ');
 
@@ -12,17 +9,13 @@ void main() {
     return;
   }
 
-  int wheels = int.tryParse(parts[0]) ?? 0;
-  int carBodies = int.tryParse(parts[1]) ?? 0;
-  int figures = int.tryParse(parts[2]) ?? 0;
+  int weight = int.tryParse(parts[0]) ?? 0;
+  int sugarContent = int.tryParse(parts[1]) ?? 0;
+  int calories = int.tryParse(parts[2]) ?? 0;
 
-  if (wheels < 4 || carBodies < 1 || figures < 2) {
-    print("0");
+  if (weight >= 200 && weight <= 300 && sugarContent >= 50 && calories >= 150) {
+    print("Yes");
   } else {
-    int maxCars = 0;
-    maxCars = wheels ~/ 4;
-    maxCars = min(maxCars, carBodies);
-    maxCars = min(maxCars, figures ~/ 2);
-    print(maxCars);
+    print("No");
   }
 }
