@@ -955,3 +955,22 @@
 //     print("No");
 //   }
 // }
+///For being lazy you are punished to walk on the garden at least N steps. As you mastered laziness, after ith step you take rest for i second(s). You also takes X second(s) to complete each step. Now write a program to calculate the total time to take exactly N steps.
+// import 'dart:io';
+//
+// void main() {
+//   // Input the values of N and X
+//   stdout.write("Enter the number of steps (N) and time per step (X): ");
+//   List<int> input = stdin.readLineSync()!.split(' ').map(int.parse).toList();
+//   int N = input[0];
+//   int X = input[1];
+//
+//   // Calculate the total time needed
+//   int resttime = 0;
+//   for (int i = 1; i < N; i++) {
+//     resttime += i; // Resting time before the ith step and stepping time for the ith step
+//   }
+//
+//   // Output the result
+//   print("Total time needed: ${resttime+ N*X} seconds");
+// }

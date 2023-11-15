@@ -2,14 +2,30 @@ import 'dart:io';
 
 void main() {
 
-  List<int> input = stdin.readLineSync()!.split(' ').map(int.parse).toList();
-  int N = input[0];
-  int X = input[1];
+  int N = int.parse(stdin.readLineSync()!);
 
-  int resttime = 0;
-  for (int i = 1; i < N; i++) {
-    resttime += i;
+  // Input the strings
+  List<String> strings = [];
+  for (int i = 0; i < N; i++) {
+    stdout.write("");
+    String str = stdin.readLineSync()!;
+    strings.add(str);
   }
 
-  print("${resttime+ N*X}");
+  // Find and print the full forms of FFT
+  List<String> fullForms = findFullForms(strings);
+  print(fullForms.length);
+  for (String form in fullForms) {
+    print(form);
+  }
+}
+
+List<String> findFullForms(List<String> strings) {
+  List<String> fullForms = [];
+  for (int i = 0; i < strings.length - 2; i++) {
+    if (strings[i][0] == 'F' && strings[i + 1][0] == 'F' && strings[i + 2][0] == 'T') {
+      fullForms.add("${strings[i]} ${strings[i + 1]} ${strings[i + 2]}");
+    }
+  }
+  return fullForms;
 }
