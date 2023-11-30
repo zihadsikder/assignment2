@@ -1,31 +1,26 @@
 import 'dart:io';
 
 void main() {
+  List<int> studentAnswers = [];
+  int correctCount = 0;
 
-  int N = int.parse(stdin.readLineSync()!);
+  // Input student answers
+  stdout.write("Enter six numbers separated by space: ");
+  String input = stdin.readLineSync()!;
+  List<String> answers = input.split(' ');
 
-  // Input the strings
-  List<String> strings = [];
-  for (int i = 0; i < N; i++) {
-    stdout.write("");
-    String str = stdin.readLineSync()!;
-    strings.add(str);
+  // Parse input into integers
+  for (String answer in answers) {
+    studentAnswers.add(int.parse(answer));
   }
 
-  // Find and print the full forms of FFT
-  List<String> fullForms = findFullForms(strings);
-  print(fullForms.length);
-  for (String form in fullForms) {
-    print(form);
-  }
-}
-
-List<String> findFullForms(List<String> strings) {
-  List<String> fullForms = [];
-  for (int i = 0; i < strings.length - 2; i++) {
-    if (strings[i][0] == 'F' && strings[i + 1][0] == 'F' && strings[i + 2][0] == 'T') {
-      fullForms.add("${strings[i]} ${strings[i + 1]} ${strings[i + 2]}");
+  // Check for even numbers and count correct answers
+  for (int answer in studentAnswers) {
+    if (answer % 2 == 0) {
+      correctCount++;
     }
   }
-  return fullForms;
+
+  // Output the result
+  print("Number of students who are correct: $correctCount");
 }
