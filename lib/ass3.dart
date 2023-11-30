@@ -1,26 +1,27 @@
 import 'dart:io';
 
 void main() {
-  List<int> studentAnswers = [];
-  int correctCount = 0;
+  // Input fields A and B
+  stdout.write("Enter fields A and B separated by space: ");
+  List<int> input = stdin.readLineSync()!.split(' ').map(int.parse).toList();
+  int A = input[0];
+  int B = input[1];
 
-  // Input student answers
-  stdout.write("Enter six numbers separated by space: ");
-  String input = stdin.readLineSync()!;
-  List<String> answers = input.split(' ');
-
-  // Parse input into integers
-  for (String answer in answers) {
-    studentAnswers.add(int.parse(answer));
+  // Ensure A is less than or equal to B
+  if (A > B) {
+    int temp = A;
+    A = B;
+    B = temp;
   }
 
-  // Check for even numbers and count correct answers
-  for (int answer in studentAnswers) {
-    if (answer % 2 == 0) {
-      correctCount++;
+  // Calculate the sum of plants in fields with an odd number of plants
+  int totalPlants = 0;
+  for (int i = A; i <= B; i++) {
+    if (i % 2 != 0) {
+      totalPlants += i;
     }
   }
 
   // Output the result
-  print("Number of students who are correct: $correctCount");
+  print("Total number of plants in fields with odd number of plants: $totalPlants");
 }
